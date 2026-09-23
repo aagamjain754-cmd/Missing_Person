@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarah Chen - Missing Since 2019</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <h1 class="site-title">Sarah Chen</h1>
+            <p class="tagline">Missing Since March 15, 2019</p>
+            <div class="nav-buttons">
+                <button class="nav-btn" onclick="loadPage('home')">HOME</button>
+                <button class="nav-btn" onclick="loadPage('diary')">DIARY</button>
+                <button class="nav-btn" onclick="loadPage('photos')">PHOTOS</button>
+                <button class="nav-btn" onclick="loadPage('messages')">MESSAGES</button>
+                <button class="nav-btn" onclick="loadPage('evidence')">???</button>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="content">
+            <div id="home" class="page active">
+                <h2>Welcome</h2>
+                <p>Sarah Chen disappeared on March 15, 2019. The apartment was locked from the inside. Her phone was still there. Her last message was never sent. The police found nothing unusual... until the evidence started changing.</p>
+                <p>Explore her diary, photos, and messages. Something isn't right.</p>
+                <div class="glitch-text" id="glitch-msg"></div>
+            </div>
+
+            <div id="diary" class="page">
+                <h2>Diary Entries</h2>
+                <div class="diary-entry">
+                    <h3>March 10, 2019</h3>
+                    <p>The dreams are getting worse. Last night I saw it again—that shape in the corner. When I blink, it's closer. I tried leaving the room, but somehow I always end up back in bed. I don't think I'm dreaming anymore.</p>
+                </div>
+                <div class="diary-entry">
+                    <h3>March 12, 2019</h3>
+                    <p>I woke up to someone whispering my name. I checked the hallway, the kitchen, everywhere. Nothing. Then I heard it again—from inside my room. I haven't told anyone. I'm starting to think it only happens when I'm alone.</p>
+                </div>
+                <div class="diary-entry">
+                    <h3>March 14, 2019</h3>
+                    <p>It's not a dream anymore. I can hear it breathing outside my door. Three slow breaths, then silence. Tonight I looked through the gap underneath the door. I saw two shadows. One was mine. I don't know whose was standing behind me. <span class="hidden-text" onclick="revealText(this)">click to reveal</span></p>
+                </div>
+                <div class="diary-entry" id="final-entry" style="display:none;">
+                    <h3>March 15, 2019 - 3:47 AM</h3>
+                    <p>I think I finally understand what it's been trying to tell me. It doesn't want me to leave. It wants me to let it in.
+
+The knocking started again a few minutes ago. Three knocks. Then silence.
+
+I haven't opened the door.
+
+I'm writing this so I'll remember what happened if I fall asleep.
+
+If anyone finds this… don't knock back.</p>
+                </div>
+            </div>
+
+            <div id="photos" class="page">
+                <h2>Photo Gallery</h2>
+                <div class="photo-grid">
+                    <div class="photo" onclick="clickPhoto(this)">
+                        <img src="assets/91dXB+SQ+5L.jpg" width='200' height='200' alt="photo">
+                        <p>Sarah - Birthday Party (2018)</p>
+                    </div>
+                    <div class="photo" onclick="clickPhoto(this)">
+                        <img src="assets/BurntOfferingsDunsmuir.webp" width='200' height='200' alt="photo">
+                        <p>Vacation (Summer 2018)</p>
+                    </div>
+                    <div class="photo" onclick="clickPhoto(this)">
+                        <img src="assets/images.jpg" width='200' height='200' alt="photo">
+                        <p>Unknown Date - Unknown Location</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="messages" class="page">
+                <h2>Messages</h2>
+                <div class="message-thread">
+                    <div class="message other">
+                        <p><strong>Mom:</strong>Sarah, I haven't heard from you in days. Please call me back. I'm getting really worried.</p>
+                        <span class="timestamp">March 14, 10:23 AM</span>
+                    </div>
+                    <div class="message other">
+                        <p><strong>Sarah:</strong>I'm here, Mom. I'm okay. I just haven't been sleeping much. Something strange has been happening in the apartment.</p>
+                        <span class="timestamp">March 14, 3:45 PM</span>
+                    </div>
+                    <div class="message self">
+                        <p><strong>Mom:</strong>What do you mean, something strange? Sarah, you're scaring me. Tell me what's going on.> </p>
+                        <span class="timestamp">March 15, 4:12 AM</span>
+                    </div>
+                    <div class="message other">
+                        <p><strong>Sarah:</strong>I keep hearing someone outside my bedroom door. The worst part is... every time I check, there's nobody there.</p>
+                        <span class="timestamp">March 15, 6:33 AM</span>
+                    </div>
+                    <div class="message self" id="last-message" style="display:none;">
+                        <p><strong>Mom:</strong> <span id="message-text">Sarah, don't open the door. Stay inside and call me. I'm coming over right now.</span></p>
+                        <span class="timestamp">Just now</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="evidence" class="page">
+                <h2>POLICE EVIDENCE</h2>
+                <p style="color: red; font-weight: bold;">⚠️ WARNING: The following content may be disturbing ⚠️</p>
+                <div class="evidence-box">
+                    <h3>Recovered Audio File</h3>
+                    <p>Found in Sarah's apartment. Timestamp: 3:47 AM, March 15, 2019</p>
+                    <p id="audio-transcript" class="glitch-effect">Two voices can be heard. They sound identical. They are arguing about "who gets to stay." The audio cuts out abruptly.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Glitch Overlay -->
+        <div id="glitch-overlay"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

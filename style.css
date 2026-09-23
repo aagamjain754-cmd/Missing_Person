@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0a0a0a;
+    color: #d4d4d4;
+    font-family: 'Courier New', monospace;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* HEADER */
+.header {
+    border: 2px solid #ff3333;
+    padding: 25px;
+    margin-bottom: 40px;
+    background-color: rgba(20, 0, 0, 0.5);
+}
+
+.header h1 {
+    font-size: 2.5em;
+    color: #ff3333;
+    margin-bottom: 10px;
+    text-shadow: 0 0 15px rgba(255, 51, 51, 0.5);
+}
+
+.personalInfo {
+    background-color: rgba(15, 15, 15, 0.8);
+    padding: 15px;
+    border-left: 3px solid #ff3333;
+    margin-top: 15px;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #333;
+}
+
+.nav-btn {
+    background-color: transparent;
+    border: 1px solid #555;
+    color: #b8b8b8;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    transition: all 0.3s;
+}
+
+.nav-btn:hover {
+    border-color: #ff3333;
+    color: #ff3333;
+    box-shadow: 0 0 10px rgba(255, 51, 51, 0.3);
+}
+
+.nav-btn.mystery {
+    border-color: #ff3333;
+    color: #ff3333;
+}
+
+/* PAGES */
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.page h2 {
+    font-size: 1.8em;
+    color: #ff3333;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+/* ENTRIES */
+.diaryEntry {
+    background-color: #1a1a1a;
+    border-left: 3px solid #555;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.diaryEntry.error {
+    border-left-color: #ff3333;
+    background-color: rgba(255, 51, 51, 0.05);
+}
+
+.entryDate {
+    color: #ff3333;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.diaryEntry p {
+    color: #c0c0c0;
+    line-height: 1.8;
+}
+
+/* HIDDEN TEXT */
+.hidden-text {
+    color: #666;
+    cursor: pointer;
+    background-color: rgba(255, 51, 51, 0.1);
+    padding: 2px 6px;
+    transition: all 0.3s;
+}
+
+.hidden-text:hover {
+    color: #ff3333;
+    background-color: rgba(255, 51, 51, 0.2);
+}
+
+/* MESSAGES */
+.messageLog {
+    background-color: rgba(15, 15, 15, 0.8);
+    border: 1px solid #333;
+    padding: 20px;
+}
+
+.msgBlock {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #1a1a1a;
+    border-left: 3px solid #555;
+}
+
+.msgBlock.self {
+    border-left-color: #ff3333;
+    background-color: rgba(255, 51, 51, 0.05);
+}
+
+.sender {
+    color: #ff3333;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    display: block;
+    font-size: 0.9em;
+}
+
+.time {
+    color: #666;
+    font-size: 0.8em;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* EVIDENCE */
+.evidenceBox {
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 2px solid #ff3333;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.warning {
+    color: #ff3333;
+    font-weight: bold;
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+    }
+    
+    .navbar {
+        justify-content: center;
+    }
+}
+
+.nav-link {
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -8px;
+    left: 0;
+    background-color: #ff3333;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::before {
+    width: 100%;
+}
+
+@keyframes pageTransition {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.page.active {
+    animation: pageTransition 0.5s ease;
+}
+
+@keyframes textGlitch {
+    0% {
+        color: #ff3333;
+        text-shadow: 0 0 5px #ff3333, 0 0 10px #ff3333;
+    }
+    50% {
+        color: #d4d4d4;
+        text-shadow: none;
+    }
+    100% {
+        color: #ff3333;
+        text-shadow: 0 0 5px #ff3333, 0 0 10px #ff3333;
+    }
+}
